@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  published_at: 2022-04-05 09:44:20
+  interval: 1
+  dark: 1.5
+  fade: false
+  captions: MyText
+  color: MyString
+
+two:
+  name: MyString
+  published_at: 2022-04-05 09:44:20
+  interval: 1
+  dark: 1.5
+  fade: false
+  captions: MyText
+  color: MyString

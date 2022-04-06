@@ -1,0 +1,30 @@
+<div class="container pt-5">
+<% if slider_present? %>
+<style>
+.carousel-item:after {
+    background: rgba(0, 0, 0, <%= slider_dark %>);
+}
+.carousel-caption h3 {
+    color: <%= caption_color %>;
+}
+</style>
+	<div id="SliderOnRails" class="carousel slide <%= carousel_fade? %>" data-bs-ride="carousel" data-bs-interval="<%= slider_interval %>">
+		<div class="carousel-inner">
+			<% @slider.images.each_with_index do |img, index| %>
+				<div class="carousel-item<%= ' active' if index == 0 %>">
+					<%= image_tag(img, class:"d-block w-100") %>
+					<div class="carousel-caption d-none d-md-block">
+						<H3><%= captions[index] %></H3>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#SliderOnRails" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button>
+		<button class="carousel-control-next" type="button" data-bs-target="#SliderOnRails" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button>
+	</div>
+<% else %>
+	<div class="alert alert-warning" role="alert">
+		No slides to display.
+	</div>
+<% end %>
+</div>
